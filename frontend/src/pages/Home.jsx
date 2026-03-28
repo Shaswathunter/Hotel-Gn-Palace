@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { QRCodeCanvas } from "qrcode.react";
 
-const FRONTEND_URL = import.meta.env.VITE_FRONTEND_URL;
 
 export default function Home() {
   return (
