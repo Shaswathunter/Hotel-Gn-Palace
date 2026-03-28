@@ -25,7 +25,7 @@ export default function Home() {
         transition={{ delay: 0.5 }}
         className="bg-white p-5 rounded-3xl shadow-2xl"
       >
-        <QRCodeCanvas value={`${FRONTEND_URL}/offer`} size={220} />
+      <QRCodeCanvas value={`${window.location.origin}/offer`} size={220} />
       </motion.div>
 
       <p className="mt-6 text-gray-400">Scan to unlock exclusive offer</p>
