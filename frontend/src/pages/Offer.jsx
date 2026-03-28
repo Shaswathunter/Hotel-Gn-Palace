@@ -15,22 +15,18 @@ export default function Offer() {
   };
 
 useEffect(() => {
-  // 🎆 Confetti
-  confetti({
-    particleCount: 180,
-    spread: 120,
-    origin: { y: 0.6 },
-  });
-
-  const audio = new Audio("/success.mp3");
-
-  const handleFirstInteraction = () => {
+  const playSound = () => {
+    const audio = new Audio("/success.mp3");
     audio.play().catch(() => {});
-    window.removeEventListener("click", handleFirstInteraction);
+    
+    // ek baar hi chale
+    window.removeEventListener("touchstart", playSound);
+    window.removeEventListener("click", playSound);
   };
 
-  // 👇 FIRST CLICK anywhere on Offer page
-  window.addEventListener("click", handleFirstInteraction);
+  // mobile + desktop dono cover
+  window.addEventListener("touchstart", playSound);
+  window.addEventListener("click", playSound);
 
 }, []);
 
